@@ -76,7 +76,6 @@ class UmlClass extends basic_kodyfire_1.Concept {
             'extension-composition': "<--*",
         };
         const symbol = symbols[relation.type];
-        console.log(relation);
         return `${relation.name} ${symbol} ${currentClass} ${relation.label ? `: ${relation.label}` : ""}`;
     }
     downloadResource(url, filepath) {

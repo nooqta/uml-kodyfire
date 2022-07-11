@@ -86,7 +86,6 @@ export class UmlClass extends BaseConcept {
       'extension-composition': "<--*",
     }
     const symbol = symbols[relation.type as keyof typeof symbols];
-    console.log(relation);
     return `${relation.name} ${symbol} ${currentClass} ${relation.label ? `: ${relation.label}` : ""}`;
   }
 
