@@ -1,7 +1,7 @@
 {
   "name": "uml-kodyfire",
   "version": "0.0.2",
-  "description": "Generate x with uml kodyfire",
+  "description": "Generate uml Diagrams with uml-kodyfire",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
