@@ -78,7 +78,7 @@ export class UmlClass extends BaseConcept {
     return (parameters || []).map((parameter: any) => `${parameter.name}: ${parameter.type}`).join(", ");
   }
 
-  generateRelation(currentClass: string, relation: {name: string, type: string}) {
+  generateRelation(currentClass: string, relation: {name: string, type: string, label?: string}) {
     const symbols = { 
       extension: "<|--",
       composition: "*--",
@@ -86,7 +86,8 @@ export class UmlClass extends BaseConcept {
       'extension-composition': "<--*",
     }
     const symbol = symbols[relation.type as keyof typeof symbols];
-    return `${relation.name} ${symbol} ${currentClass}`;
+    console.log(relation);
+    return `${relation.name} ${symbol} ${currentClass} ${relation.label ? `: ${relation.label}` : ""}`;
   }
 
   async downloadResource(url: any, filepath: string) {

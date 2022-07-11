@@ -11,6 +11,7 @@ export declare class UmlClass extends BaseConcept {
     generateRelation(currentClass: string, relation: {
         name: string;
         type: string;
+        label?: string;
     }): string;
     downloadResource(url: any, filepath: string): Promise<unknown>;
     getFilename(data: any): any;
