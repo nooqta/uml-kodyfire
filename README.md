@@ -8,6 +8,7 @@
   <a href="https://twitter.com/anis_marrouchi" target="_blank">
     <img alt="Twitter: anis_marrouchi" src="https://img.shields.io/twitter/follow/anis_marrouchi.svg?style=social" />
   </a>
+
 A uml diagram generator using kodyfire.
 
 ## Prerequisites
@@ -47,7 +48,7 @@ kody run -s uml-kody.json
 Copyright © 2022 [Anis Marrouchi](https://github.com/anis-marrouchi).<br />
 
 
-This project is [MIT](https://github.com/nooqta/uml-kodyfire/blob/master/LICENSE)) licensed.
+This project is [MIT](https://github.com/nooqta/uml-kodyfire/blob/master/LICENSE) licensed.
 
 ***
 _This README was generated with ❤️ by [readme-kodyfire](https://github.com/nooqta/readme-kodfire)_
