@@ -16,6 +16,7 @@ export declare const concept: {
         };
     };
 };
+export declare const themes: string[];
 export declare const umlClass: {
     type: string;
     properties: {
@@ -91,6 +92,121 @@ export declare const umlClass: {
                     };
                 };
             };
+        };
+    };
+};
+export declare const useCaseUml: {
+    type: string;
+    properties: {
+        name: {
+            type: string;
+        };
+        extension: {
+            enum: string[];
+            default: string;
+        };
+        theme: {
+            enum: string[];
+        };
+        outputDir: {
+            type: string;
+        };
+        actorStyle: {
+            enum: string[];
+            default: string;
+        };
+        groups: {
+            type: string;
+            items: {
+                type: string;
+                properties: {
+                    name: {
+                        type: string;
+                    };
+                    packageType: {
+                        enum: string[];
+                        default: string;
+                    };
+                    useCases: {
+                        type: string;
+                        items: {
+                            type: string;
+                            properties: {
+                                title: {
+                                    type: string;
+                                };
+                                label: {
+                                    type: string;
+                                };
+                            };
+                        };
+                    };
+                    actors: {
+                        type: string;
+                        items: {
+                            type: string;
+                            properties: {
+                                title: {
+                                    type: string;
+                                };
+                                label: {
+                                    type: string;
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        };
+        relations: {
+            type: string;
+            items: {
+                type: string;
+                properties: {
+                    actor: {
+                        type: string;
+                    };
+                    action: {
+                        type: string;
+                    };
+                };
+            };
+        };
+    };
+};
+export declare const sequenceUml: {
+    type: string;
+    properties: {
+        name: {
+            type: string;
+        };
+        extension: {
+            enum: string[];
+            default: string;
+        };
+        theme: {
+            enum: string[];
+        };
+        outputDir: {
+            type: string;
+        };
+    };
+};
+export declare const activityUml: {
+    type: string;
+    properties: {
+        name: {
+            type: string;
+        };
+        extension: {
+            enum: string[];
+            default: string;
+        };
+        theme: {
+            enum: string[];
+        };
+        outputDir: {
+            type: string;
         };
     };
 };
@@ -191,6 +307,27 @@ export declare const uml: {
         };
         outputDir: {
             type: string;
+        };
+    };
+};
+export declare const conceptArray: {
+    type: string;
+    items: {
+        type: string;
+        properties: {
+            name: {
+                type: string;
+            };
+            template: {
+                type: string;
+                enum: string[];
+            };
+            outputDir: {
+                type: string;
+            };
+            title: {
+                type: string;
+            };
         };
     };
 };
@@ -297,7 +434,7 @@ export declare const umlClassArray: {
         };
     };
 };
-export declare const conceptArray: {
+export declare const useCaseArray: {
     type: string;
     items: {
         type: string;
@@ -305,14 +442,117 @@ export declare const conceptArray: {
             name: {
                 type: string;
             };
-            template: {
-                type: string;
+            extension: {
+                enum: string[];
+                default: string;
+            };
+            theme: {
                 enum: string[];
             };
             outputDir: {
                 type: string;
             };
-            title: {
+            actorStyle: {
+                enum: string[];
+                default: string;
+            };
+            groups: {
+                type: string;
+                items: {
+                    type: string;
+                    properties: {
+                        name: {
+                            type: string;
+                        };
+                        packageType: {
+                            enum: string[];
+                            default: string;
+                        };
+                        useCases: {
+                            type: string;
+                            items: {
+                                type: string;
+                                properties: {
+                                    title: {
+                                        type: string;
+                                    };
+                                    label: {
+                                        type: string;
+                                    };
+                                };
+                            };
+                        };
+                        actors: {
+                            type: string;
+                            items: {
+                                type: string;
+                                properties: {
+                                    title: {
+                                        type: string;
+                                    };
+                                    label: {
+                                        type: string;
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+            relations: {
+                type: string;
+                items: {
+                    type: string;
+                    properties: {
+                        actor: {
+                            type: string;
+                        };
+                        action: {
+                            type: string;
+                        };
+                    };
+                };
+            };
+        };
+    };
+};
+export declare const sequenceArray: {
+    type: string;
+    items: {
+        type: string;
+        properties: {
+            name: {
+                type: string;
+            };
+            extension: {
+                enum: string[];
+                default: string;
+            };
+            theme: {
+                enum: string[];
+            };
+            outputDir: {
+                type: string;
+            };
+        };
+    };
+};
+export declare const activityArray: {
+    type: string;
+    items: {
+        type: string;
+        properties: {
+            name: {
+                type: string;
+            };
+            extension: {
+                enum: string[];
+                default: string;
+            };
+            theme: {
+                enum: string[];
+            };
+            outputDir: {
                 type: string;
             };
         };
@@ -447,6 +687,130 @@ export declare const schema: {
                                 };
                             };
                         };
+                    };
+                    outputDir: {
+                        type: string;
+                    };
+                };
+            };
+        };
+        useCase: {
+            type: string;
+            items: {
+                type: string;
+                properties: {
+                    name: {
+                        type: string;
+                    };
+                    extension: {
+                        enum: string[];
+                        default: string;
+                    };
+                    theme: {
+                        enum: string[];
+                    };
+                    outputDir: {
+                        type: string;
+                    };
+                    actorStyle: {
+                        enum: string[];
+                        default: string;
+                    };
+                    groups: {
+                        type: string;
+                        items: {
+                            type: string;
+                            properties: {
+                                name: {
+                                    type: string;
+                                };
+                                packageType: {
+                                    enum: string[];
+                                    default: string;
+                                };
+                                useCases: {
+                                    type: string;
+                                    items: {
+                                        type: string;
+                                        properties: {
+                                            title: {
+                                                type: string;
+                                            };
+                                            label: {
+                                                type: string;
+                                            };
+                                        };
+                                    };
+                                };
+                                actors: {
+                                    type: string;
+                                    items: {
+                                        type: string;
+                                        properties: {
+                                            title: {
+                                                type: string;
+                                            };
+                                            label: {
+                                                type: string;
+                                            };
+                                        };
+                                    };
+                                };
+                            };
+                        };
+                    };
+                    relations: {
+                        type: string;
+                        items: {
+                            type: string;
+                            properties: {
+                                actor: {
+                                    type: string;
+                                };
+                                action: {
+                                    type: string;
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        };
+        sequence: {
+            type: string;
+            items: {
+                type: string;
+                properties: {
+                    name: {
+                        type: string;
+                    };
+                    extension: {
+                        enum: string[];
+                        default: string;
+                    };
+                    theme: {
+                        enum: string[];
+                    };
+                    outputDir: {
+                        type: string;
+                    };
+                };
+            };
+        };
+        activity: {
+            type: string;
+            items: {
+                type: string;
+                properties: {
+                    name: {
+                        type: string;
+                    };
+                    extension: {
+                        enum: string[];
+                        default: string;
+                    };
+                    theme: {
+                        enum: string[];
                     };
                     outputDir: {
                         type: string;

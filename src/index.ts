@@ -1,6 +1,6 @@
 export * from 'basic-kodyfire';
+export * from './concepts';
+export { Concept } from './concepts';
 export { Technology } from './technology';
 export { schema } from './schema';
-export { Concept } from './concept';
-export { UmlClass } from './umlClass';
 export { Kody } from './kody';

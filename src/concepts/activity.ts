@@ -5,7 +5,7 @@ import { Concept as BaseConcept, Engine } from "basic-kodyfire";
 import Axios from "axios";
 const { plantuml } = require("plantuml-client-js");
 
-export class UmlClass extends BaseConcept {
+export class Activity  extends BaseConcept {
   constructor(concept: Partial<IConcept>, technology: ITechnology) {
     super(concept, technology);
   }
@@ -43,50 +43,8 @@ export class UmlClass extends BaseConcept {
   generateUml(data: any) {
     const uml = `@startuml
                   ${data.theme == 'nul' ? '':`!theme ${data.theme}`}
-                  ${(data.classes || []).map((classData: any) => this.generateClass(classData)).join("\n")}
                   @enduml`;
     return uml;
-  }
-
-  generateClass(data: any) {
-    return `${data.declaration} ${data.name} {
-      ${(data.properties || [])
-        .map((member: any) => this.generateProperty(member))
-        .join("\n")}
-      ${(data.methods || [])
-        .map((member: any) => this.generateMethod(member))
-        .join("\n")}
-      }
-      
-      ${(data.relations || [])
-        .map((relation: any) => this.generateRelation(data.name, relation))
-        .join("\n")}`
-  }
-
-  generateProperty(member: any) {
-    return `${member.name} : ${member.type}`;
-  }
-
-  generateMethod(member: any) {
-    return `${member.visibility} ${member.name}(${this.getParameters(
-      member.parameters
-    )}) : ${member.returnType}`;
-  }
-
-  getParameters(parameters: any) {
-    if (!parameters) return "";
-    return (parameters || []).map((parameter: any) => `${parameter.name}: ${parameter.type}`).join(", ");
-  }
-
-  generateRelation(currentClass: string, relation: {name: string, type: string, label?: string}) {
-    const symbols = { 
-      extension: "<|--",
-      composition: "*--",
-      aggregation: "o--",
-      'extension-composition': "<--*",
-    }
-    const symbol = symbols[relation.type as keyof typeof symbols];
-    return `${relation.name} ${symbol} ${currentClass} ${relation.label ? `: ${relation.label}` : ""}`;
   }
 
   async downloadResource(url: any, filepath: string) {

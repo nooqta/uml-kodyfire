@@ -5,13 +5,13 @@ import { Concept as BaseConcept, Engine } from "basic-kodyfire";
 import Axios from "axios";
 const { plantuml } = require("plantuml-client-js");
 
-export class {{classify name }}  extends BaseConcept {
+export class UseCase  extends BaseConcept {
   constructor(concept: Partial<IConcept>, technology: ITechnology) {
     super(concept, technology);
+    this.engine = new Engine();
   }
 
   async generate(_data: any) {
-    this.engine = new Engine();
     const uml = this.generateUml(_data);
     const url = plantuml.generateUrl(_data.extension, uml);
     const filepath = join(
@@ -43,8 +43,30 @@ export class {{classify name }}  extends BaseConcept {
   generateUml(data: any) {
     const uml = `@startuml
                   ${data.theme == 'nul' ? '':`!theme ${data.theme}`}
+                  left to right direction
+                  skinparam actorStyle ${data.actorStyle}
+                  ${(data.groups || []).map((group: any) => this.generateGroup(group)).join("\n")}
+                  ${(data.relations || []).map((relation: any) => this.generateRelation(relation)).join("\n")}
                   @enduml`;
     return uml;
+  }
+  generateRelation(relation: any) {
+    return `${relation.actor} --> ${relation.action}`;
+  }
+
+  generateGroup(data: any) {
+    const group = `${ data.packageType != 'none'? `package ${data.name} {` : ''}
+      ${(data.useCases || []).map((useCase: any) => this.generateUseCase(useCase)).join("\n")}
+      ${(data.actors || []).map((actor: any) => this.generateActor(actor)).join("\n")}
+      ${ data.packageType != 'none'? `}` : ''}`;
+       
+    return group;
+  }
+  generateActor(actor: any) {
+    return `actor ${actor.title} as ${actor.label}`;
+  }
+  generateUseCase(useCase: any) {
+    return `usecase "${useCase.title}" as ${useCase.label}`;
   }
 
   async downloadResource(url: any, filepath: string) {
@@ -78,4 +100,6 @@ export class {{classify name }}  extends BaseConcept {
       ? this.technology.params.templatesPath
       : relative(process.cwd(), __dirname);
   }
-}
+} 
+
+

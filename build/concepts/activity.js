@@ -12,13 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UmlClass = void 0;
+exports.Activity = void 0;
 const path_1 = require("path");
 const fs_1 = __importDefault(require("fs"));
 const basic_kodyfire_1 = require("basic-kodyfire");
 const axios_1 = __importDefault(require("axios"));
 const { plantuml } = require("plantuml-client-js");
-class UmlClass extends basic_kodyfire_1.Concept {
+class Activity extends basic_kodyfire_1.Concept {
     constructor(concept, technology) {
         super(concept, technology);
     }
@@ -39,44 +39,8 @@ class UmlClass extends basic_kodyfire_1.Concept {
     generateUml(data) {
         const uml = `@startuml
                   ${data.theme == 'nul' ? '' : `!theme ${data.theme}`}
-                  ${(data.classes || []).map((classData) => this.generateClass(classData)).join("\n")}
                   @enduml`;
         return uml;
-    }
-    generateClass(data) {
-        return `${data.declaration} ${data.name} {
-      ${(data.properties || [])
-            .map((member) => this.generateProperty(member))
-            .join("\n")}
-      ${(data.methods || [])
-            .map((member) => this.generateMethod(member))
-            .join("\n")}
-      }
-      
-      ${(data.relations || [])
-            .map((relation) => this.generateRelation(data.name, relation))
-            .join("\n")}`;
-    }
-    generateProperty(member) {
-        return `${member.name} : ${member.type}`;
-    }
-    generateMethod(member) {
-        return `${member.visibility} ${member.name}(${this.getParameters(member.parameters)}) : ${member.returnType}`;
-    }
-    getParameters(parameters) {
-        if (!parameters)
-            return "";
-        return (parameters || []).map((parameter) => `${parameter.name}: ${parameter.type}`).join(", ");
-    }
-    generateRelation(currentClass, relation) {
-        const symbols = {
-            extension: "<|--",
-            composition: "*--",
-            aggregation: "o--",
-            'extension-composition': "<--*",
-        };
-        const symbol = symbols[relation.type];
-        return `${relation.name} ${symbol} ${currentClass} ${relation.label ? `: ${relation.label}` : ""}`;
     }
     downloadResource(url, filepath) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -107,5 +71,5 @@ class UmlClass extends basic_kodyfire_1.Concept {
             : (0, path_1.relative)(process.cwd(), __dirname);
     }
 }
-exports.UmlClass = UmlClass;
-//# sourceMappingURL=umlClass.js.map
+exports.Activity = Activity;
+//# sourceMappingURL=activity.js.map

@@ -5,7 +5,7 @@ import { Concept as BaseConcept, Engine } from "basic-kodyfire";
 import Axios from "axios";
 const { plantuml } = require("plantuml-client-js");
 
-export class {{classify name }}  extends BaseConcept {
+export class Sequence  extends BaseConcept {
   constructor(concept: Partial<IConcept>, technology: ITechnology) {
     super(concept, technology);
   }

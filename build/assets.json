@@ -20,6 +20,33 @@
                 "options": [],
                 "placeholders": []
             }
+        },
+        {
+            "name": "activity",
+            "outputDir": "",
+            "template": {
+                "path": "templates/",
+                "options": [],
+                "placeholders": []
+            }
+        },
+        {
+            "name": "sequence",
+            "outputDir": "",
+            "template": {
+                "path": "templates/",
+                "options": [],
+                "placeholders": []
+            }
+        },
+        {
+            "name": "useCase",
+            "outputDir": "",
+            "template": {
+                "path": "templates/",
+                "options": [],
+                "placeholders": []
+            }
         }
     ]
 }
