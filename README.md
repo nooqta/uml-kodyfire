@@ -30,6 +30,12 @@ npm i -s uml-kodyfire
 
 ## Usage
 
+### Method 1: As a generator
+In order to generate your artifacts. The syntax is `kody generate|g [kody] [concept]`. If you ommit `kody` and `concept` the assistant will prompt you to select them. As an example, run the following command from your terminal:
+```sh
+kody generate react component
+```
+### Method 2: As a kody project
 Refer to the kodyfire ["install a kody"](https://github.com/nooqta/kodyfire#install-a-kody) section
 ```sh
 npm i -s uml-kodyfire
