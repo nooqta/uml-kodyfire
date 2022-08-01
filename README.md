@@ -36,7 +36,7 @@ In order to generate your artifacts, run the `generate` command. The syntax is `
 kody generate react component
 ```
 ### Method 2: As a kody project
-Refer to the kodyfire ["install a kody"](https://github.com/nooqta/kodyfire#install-a-kody) section
+Refer to the kodyfire __[generate your artifact](https://github.com/nooqta/kodyfire#generate-your-artifact)__ section
 ```sh
 npm i -s uml-kodyfire
 ```
