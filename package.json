@@ -1,6 +1,6 @@
 {
   "name": "uml-kodyfire",
-"version": "0.0.11",
+"version": "0.0.12",
   "description": "Generate uml Diagrams with uml-kodyfire",
   "main": "build/index.js",
   "scripts": {
