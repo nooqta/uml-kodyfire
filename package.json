@@ -1,6 +1,6 @@
 {
   "name": "uml-kodyfire",
-"version": "0.0.13",
+"version": "0.0.17",
   "description": "Generate uml Diagrams with uml-kodyfire",
   "main": "build/index.js",
   "scripts": {
@@ -22,11 +22,11 @@
     "@angular-devkit/schematics": "^12.2.3",
     "ajv": "^8.6.3",
     "axios": "^0.27.2",
-    "basic-kodyfire": "^0.0.156",
+    "basic-kodyfire": "^0.0.161",
     "fs-extra": "^10.0.0",
     "handlebars": "^4.7.7",
     "handlebars-delimiters": "^1.0.0",
-    "kodyfire-core": "^0.0.135",
+    "kodyfire-core": "^0.0.161",
     "moment": "^2.29.1",
     "pako": "^2.0.4",
     "plantuml-client-js": "^0.2.4",
